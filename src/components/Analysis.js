@@ -31,7 +31,7 @@ export default function Analysis() {
 
   return (
     <div className="h-screen w-screen grid place-items-center">
-      <div className="space-y-7 w-[40%]  border border-gray-200 rounded shadow p-6">
+      <div className="space-y-7 w-11/12 md:w-[40%]  border border-gray-200 rounded shadow p-6">
         <h1 className="font-bold text-center text-3xl">Analysis</h1>
 
         <div className="w-full grid grid-cols-4 gap-4">
