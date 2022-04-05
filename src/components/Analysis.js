@@ -15,10 +15,15 @@ export default function Analysis() {
       return
     }
     setShowLoading(()=>true)
-    fetch(`http://127.0.0.1:8000/getanalysisresult/${searchTerm}`)
+    fetch(`https://tweetfarmapi.herokuapp.com/getanalysisresult/${searchTerm}`)
       .then((res) => res.json())
       .then((data) => {
-        console.log(data.image);
+        if(data.message){
+          alert("No tweets found for the past week or so")
+          setShowLoading(()=>false)
+          return
+        }
+        console.log(data.polarity)
         setShowLoading(()=>false)
         setImageData("data:image/png;base64," + data.image);
       });
